@@ -85,4 +85,15 @@ class Product(object):
         return self.product.get(attr, "")
 
 
+def search(keywords="", search_url="", max_product_nb=100):
+    """Function to get the list of products from amazon"""
+    amz = Client()
+    product_dict_list = amz._get_products(
+        keywords=keywords,
+        search_url=search_url,
+        max_product_nb=max_product_nb)
+    products = Products(product_dict_list)
+    products.html_pages = amz.html_pages
+    products.last_html_page = amz.html_pages[-1]
 
+    return products
