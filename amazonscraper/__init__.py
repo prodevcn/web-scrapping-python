@@ -45,22 +45,7 @@ class Products(object):
         (ex : products[1]) """
         return self.products[key]
 
-    def csv(self, file_name, separator=","):
-        """ Returns a CSV string with the product info
-        >>> p = Products([{'title':'Book title', 'rating': '4.2',\
-'review_nb': '15', 'url':'http://www.amazon.com/book', 'asin':'A12345'}])
-        >>> p.csv()
-        'Product title,Rating,Number of customer reviews,\
-Product URL,Image URL,ASIN\\n"Book title",4.2,15,http://www.amazon.com/book,,A12345'
-
-        >>> print(p.csv(separator=";"))
-        Product title;Rating;Number of customer reviews;Product URL;Image URL;ASIN
-        "Book title";4,2;15;http://www.amazon.com/book;;A12345
-
-        >>> p2 = Products()
-        >>> p2.csv()
-        'Product title,Rating,Number of customer reviews,Product URL,Image URL,ASIN'
-        """
+    
 
         if not self.products:
             return
