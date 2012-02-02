@@ -12,12 +12,7 @@ __version__ = '0.1.2'  # Should be the same in setup.py
 
 class Products(object):
     """Class of the products"""
-    def __init__(self, product_dict_list=[]):
-        self.products = []
-        self.last_html_page = ""  # HTML content of the last scraped page
-        self.html_pages = []
-        for product_dict in product_dict_list:
-            self._add_product(product_dict)
+    
 
     def _add_product(self, product_dict):
         """ Append a product to the object product list
